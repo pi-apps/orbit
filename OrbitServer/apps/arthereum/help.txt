@@ -1,0 +1,4 @@
+const user = await new Promise<any>((resolve) => {
+                redditClient.getMe().then(resolve);
+              });
+//This is how we get the user from reddit. 

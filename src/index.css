@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.masonry-grid {
+  column-gap: 1rem;
+  column-count: 1;
+}
+*[data-word-wrap] {
+  word-break: break-word;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.hide-scrollbars::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.hide-scrollbars {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+@media (min-width: 640px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 4;
+  }
+}
+
+.masonry-grid-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+html,
+body {
+  @apply bg-white text-gray-800;
+}
