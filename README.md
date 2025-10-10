@@ -1,50 +1,112 @@
-# Getting Started with Create React App
+# Orbit - AI-Powered Social Media Management
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Orbit is an AI-powered social media management platform designed to help users create engaging content, automate their social media presence, and grow their audience. This repository contains the open-source frontend application.
 
-## Available Scripts
+## Key Features
 
-In the project directory, you can run:
+- **Link Multiple Social Media Accounts:** Connect and manage multiple social media profiles from a single dashboard.
+- **One-Click Posting:** Instantly share your content across all linked accounts with a single click.
+- **AI-Powered Content Creation:** Generate high-quality, engaging posts tailored to your brand and audience.
+- **Schedule Posts:** Plan and automate your content calendar to maintain a consistent online presence.
+- **Automate Posting:** automate your online presence with powerful AI social managers that runs 24h/24
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Follow these instructions to set up and run the Orbit frontend on your local machine.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- [Node.js](https://nodejs.org/) (v16 or later)
+- [npm](https://www.npmjs.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Clone the Repository
 
-### `npm run build`
+Clone this repository to your local machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/your-username/orbit.git
+cd orbit
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Install Frontend Dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install the required npm packages for the React application:
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 3. Set Up the Backend Server
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This repository does not include full original backend code, which is kept private due to security reasons for now (as this is resolved, the backend code will gradually be open sourced). To run the frontend, you will need to set up a mock backend to fill the empty functions body.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Install Backend Dependencies
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Navigate to the `OrbitServer` directory and install its dependencies:
 
-## Learn More
+```bash
+cd OrbitServer
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Create Mock Backend Files
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The core backend logic resides in `OrbitServer/apps/arthereum/OrbitRoutes.ts` and `src/backend/OrbitProvider.ts`. Since these files are not fully included, you will need to create them with placeholder content. We plan to gradually open-source these files in the future.
 
-When changinf site for production, do not forget to update the cors of the storage bucket
-gcloud storage buckets update gs://connect-social-project.appspot.com --cors-file=cors.json
-In the cors.json file, make sure that the production url is there.
+1. **Create `OrbitRoutes.ts`:**
+
+   Create a new file at `OrbitServer/apps/arthereum/OrbitRoutes.ts` and add the following placeholder content. This sets up an Express router to handle API requests from the frontend.
+
+   ```typescript
+   import express from "express";
+
+   const router = express.Router();
+
+   // Add mock API endpoints here
+   // Example:
+   // router.get("/user", (req, res) => {
+   //   res.json({ username: "mock_user" });
+   // });
+
+   export default router;
+   ```
+
+2. **Create `OrbitProvider.ts`:**
+
+   Create a new file at `src/backend/OrbitProvider.ts` and add the following placeholder content. This class is responsible for all interactions with the backend, so you will need to mock its methods.
+
+   ```typescript
+   class OrbitProvider {
+     // Add mock methods here
+     // Example:
+     // async getUser() {
+     //   return { username: "mock_user" };
+     // }
+   }
+
+   export default new OrbitProvider();
+   ```
+
+### 4. Run the Application
+
+Once you have set up the frontend and mock backend, you can run the application using the following command from the root directory:
+
+```bash
+npm start
+```
+
+This will start both the React development server (on `http://localhost:3000`) and the mock backend server (on `http://localhost:3001`).
+
+## Contributing
+
+We welcome contributions from the community! If you would like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with descriptive messages.
+4. Push your changes to your fork.
+5. Submit a pull request to the main repository.
+
+## License
+
+This project is licensed under the PIOS License.
